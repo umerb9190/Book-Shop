@@ -166,3 +166,25 @@ a.secondary {
     filter: invert();
   }
 }
+.buttonContainer {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically (if needed) */
+  gap: 10px;               /* Space between buttons */
+  margin-top: 20px;        /* Space above the button container */
+}
+
+.genreButton {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.genreButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

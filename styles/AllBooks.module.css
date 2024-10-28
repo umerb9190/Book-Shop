@@ -1,0 +1,152 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f8fafc;
+    min-height: 100vh;
+  }
+  
+  .title {
+    color: #1a237e;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+  
+  .filterContainer {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .filterSelect {
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    background-color: white;
+    font-size: 1rem;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 200px;
+  }
+  
+  .filterSelect:hover {
+    border-color: #7c4dff;
+  }
+  
+  .filterSelect:focus {
+    outline: none;
+    border-color: #7c4dff;
+    box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.2);
+  }
+  
+  .bookList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .bookItem {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .bookItem:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bookID {
+    color: #718096;
+    font-size: 0.875rem;
+  }
+  
+  .bookTitle {
+    color: #1a237e;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+  }
+  
+  .bookGenre {
+    color: #4a5568;
+    font-size: 1rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #f7f9fc;
+    border-radius: 20px;
+    display: inline-block;
+    align-self: flex-start;
+  }
+  
+  .bookPrice {
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+  
+  .bookRating {
+    color: #805ad5;
+    font-weight: 500;
+  }
+  
+  .viewDetailButton {
+    margin-top: auto;
+    padding: 0.75rem 1.5rem;
+    background-color: #7c4dff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .viewDetailButton:hover {
+    background-color: #6b3fff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  
+    .bookList {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+  
+    .filterSelect {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  /* Loading State */
+  .bookList:empty {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #718096;
+  }
+  
+  /* Error State */
+  .error {
+    color: #e53e3e;
+    text-align: center;
+    padding: 2rem;
+  }

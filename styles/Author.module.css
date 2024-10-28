@@ -1,0 +1,163 @@
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 3rem;
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+  transition: all 0.3s ease;
+  color: #ecf0f1;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(44, 62, 80, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.container:hover::before {
+  opacity: 1;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(52, 152, 219, 0.3);
+}
+
+.pageTitle {
+  font-size: 1.2rem;
+  color: #95a5a6;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.pageTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #3498db;
+  border-radius: 1px;
+}
+
+.authorName {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-block;
+}
+
+.authorName::before {
+  content: '"';
+  position: absolute;
+  left: -2rem;
+  top: -1rem;
+  font-size: 4rem;
+  color: rgba(52, 152, 219, 0.3);
+  font-family: Georgia, serif;
+}
+
+.biography {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ecf0f1;
+  position: relative;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1rem;
+}
+
+/* Adding some decorative elements */
+.container::after {
+  content: '✒️';
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  opacity: 0.2;
+  transform: rotate(-15deg);
+}
+
+/* Error State */
+.container > p:only-child {
+  text-align: center;
+  color: #ecf0f1;
+  font-size: 1.2rem;
+  padding: 2rem;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .pageTitle {
+    font-size: 1rem;
+  }
+
+  .authorName {
+    font-size: 2rem;
+  }
+
+  .authorName::before {
+    font-size: 3rem;
+    left: -1.5rem;
+  }
+
+  .biography {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Hover Effects for Text */
+.biography:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+}
+
+/* Additional Animation for Loading State */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.container.loading {
+  background: linear-gradient(
+    to right,
+    #2c3e50 8%,
+    #34495e 18%,
+    #2c3e50 33%
+  );
+  background-size: 800px 104px;
+  animation: shimmer 1.5s infinite linear;
+}

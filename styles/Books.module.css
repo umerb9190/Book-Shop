@@ -1,0 +1,50 @@
+/* Container for all books */
+.booksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Each book item */
+  .bookItem {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s;
+  }
+  
+  .bookItem:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Book ID and Title */
+  .bookTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  /* Genre button */
+  .genreButton {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 10px;
+    background-color: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .genreButton:hover {
+    background-color: #005bb5;
+  }
+  .bookID{
+    color: #333;
+  }

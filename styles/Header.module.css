@@ -1,0 +1,21 @@
+.header {
+    background-color: #1E90FF; /* Bright blue color */
+    padding: 1rem; /* Padding around the header */
+}
+
+.nav {
+    display: flex; /* Flexbox layout for horizontal alignment */
+    justify-content: space-around; /* Space out the links */
+    align-items: center; /* Center the items vertically */
+}
+
+.link {
+    color: #FFFFFF; /* White text color for contrast */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1.2rem; /* Font size for the links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.link:hover {
+    color: #FFD700; /* Change to gold on hover */
+}

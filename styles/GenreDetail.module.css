@@ -1,0 +1,214 @@
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+    color: #ecf0f1;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(44, 62, 80, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .container:hover::before {
+    opacity: 1;
+  }
+  
+  .container h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .container h1::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: #3498db;
+    border-radius: 1px;
+  }
+  
+  .bookItem {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bookItem:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .bookItem::before {
+    content: '📖';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.2;
+    transform: rotate(-15deg);
+  }
+  
+  .genreID {
+    font-size: 0.9rem;
+    color: #95a5a6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bookTitle {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0.75rem 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bookItem a {
+    display: inline-block;
+    background: rgba(52, 152, 219, 0.2);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+  }
+  
+  .bookItem a:hover {
+    background: rgba(52, 152, 219, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .bookItem a::after {
+    content: '→';
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+    display: inline-block;
+  }
+  
+  .bookItem a:hover::after {
+    transform: translateX(4px);
+  }
+  
+  /* Error State */
+  .container > p:only-child {
+    text-align: center;
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    padding: 2rem;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+  }
+  
+  /* Loading Animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  
+  .container.loading {
+    background: linear-gradient(
+      to right,
+      #2c3e50 8%,
+      #34495e 18%,
+      #2c3e50 33%
+    );
+    background-size: 800px 104px;
+    animation: shimmer 1.5s infinite linear;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  
+    .container h1 {
+      font-size: 1.5rem;
+    }
+  
+    .bookItem {
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+  
+    .bookTitle {
+      font-size: 1.25rem;
+    }
+  
+    .bookItem a {
+      padding: 0.6rem 1.2rem;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  /* Additional Hover Effects */
+  .bookItem:hover::before {
+    animation: float 2s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: rotate(-15deg) translateY(0);
+    }
+    50% {
+      transform: rotate(-10deg) translateY(-5px);
+    }
+  }
+  
+  /* Scrollbar Styling */
+  .container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(52, 152, 219, 0.5) rgba(44, 62, 80, 0.1);
+  }
+  
+  .container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .container::-webkit-scrollbar-track {
+    background: rgba(44, 62, 80, 0.1);
+    border-radius: 4px;
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    background: rgba(52, 152, 219, 0.5);
+    border-radius: 4px;
+  }
