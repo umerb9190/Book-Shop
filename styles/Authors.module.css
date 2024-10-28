@@ -1,0 +1,42 @@
+/* General text styling for paragraphs inside author items */
+.authorText {
+    font-size: 16px;
+    
+    margin: 10px 0;
+}
+
+/* Loading and error message styling */
+.loadingErrorText {
+    font-size: 18px;
+    color: #0e1a40;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Rest of your styles */
+.authorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f7fa;
+    font-family: Arial, sans-serif;
+    
+}
+
+.authorItem {
+    background-color: #0e1a40;
+    color: #ffffff;
+    border: 1px solid #d0d4da;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.authorItem:hover {
+    transform: scale(1.02);
+}

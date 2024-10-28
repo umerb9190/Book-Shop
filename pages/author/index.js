@@ -1,27 +1,29 @@
 import useSWR from 'swr';
-// Adjust the path to your fetcher function
-import styles from "@/styles/Author.module.css"; // Your CSS styles
+import styles from "@/styles/Authors.module.css";
+import Header from '@/components/book_shop/Header';
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export default function Author() {
-    // Use SWR to fetch authors data
-    const { data, error } = useSWR('/api/author', fetcher); // Replace with your API endpoint
-  
-    // Handle loading state
-    if (!data) return <p>Loading authors...</p>;
+export default function Authors() {
+    
+    const { data, error } = useSWR('/api/author', fetcher);
 
-    // Handle error state
-    if (error) return <p>Error loading authors: {error.message}</p>;
+    if (!data) return <p className={styles.loadingErrorText}>Loading authors...</p>;
+    if (error) return <p className={styles.loadingErrorText}>Error loading authors: {error.message}</p>;
 
     return (
+        <>
+        <Header/>
         <div className={styles.authorContainer}>
+           
             {data.map((author) => (
                 <div key={author.id} className={styles.authorItem}>
-                    <p>Name: {author.name}</p>
-                    <p>Biography: {author.biography}</p>
-                    <p>Author ID: {author.id}</p>
+                    <p className={styles.authorText}>Name: {author.name}</p>
+                    <p className={styles.authorText}>Biography: {author.biography}</p>
+                    <p className={styles.authorText}>Author ID: {author.id}</p>
                 </div>
             ))}
         </div>
+        </>
     );
 }

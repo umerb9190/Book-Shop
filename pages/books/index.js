@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { getAllbooks, getAllgenres } from '@/helper/helper';
 import Link from 'next/link';
 import styles from '@/styles/AllBooks.module.css';
+import Header from '@/components/book_shop/Header';
 
 export default function AllBooks({ books, genres }) {
     const [selectedGenre, setSelectedGenre] = useState('all');
@@ -10,9 +11,9 @@ export default function AllBooks({ books, genres }) {
     const filteredBooks = selectedGenre === 'all' 
         ? books 
         : books.filter(book => book.genreId === selectedGenre);
-
     return (
         <div className={styles.container}>
+              <Header/>
             <h1 className={styles.title}>All Books</h1>
             
             <div className={styles.filterContainer}>
